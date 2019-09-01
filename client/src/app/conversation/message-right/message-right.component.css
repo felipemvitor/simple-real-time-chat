@@ -1,0 +1,18 @@
+#message-box{
+    float:right;
+    background: #21252b;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0px 8px;
+}
+
+#sender{
+  color: white;
+  margin: 0 0 4px 0;
+  float:right;
+  font-size: 14px;
+}
+
+#message{
+  color: white;
+  margin: 0px;
+}

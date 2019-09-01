@@ -1,0 +1,14 @@
+#message-box{
+  width: 50%;
+  margin: auto;
+  background: #21252b;
+  padding: 8px 16px;
+  border-radius: 8px;
+  overflow:auto;
+}
+
+#info{
+  color: white;
+  margin: 0px;
+  text-align: center;
+}
