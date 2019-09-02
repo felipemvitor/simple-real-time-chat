@@ -7,6 +7,13 @@ import { ConversationComponent } from './conversation/conversation.component';
 import { MessageRightComponent } from './conversation/message-right/message-right.component';
 import { MessageLeftComponent } from './conversation/message-left/message-left.component';
 import { MessageInfoComponent } from './conversation/message-info/message-info.component';
+import { UsersComponent } from './users/users.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {
+  MatListModule,
+  MatIconModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -14,11 +21,15 @@ import { MessageInfoComponent } from './conversation/message-info/message-info.c
     ConversationComponent,
     MessageRightComponent,
     MessageLeftComponent,
-    MessageInfoComponent
+    MessageInfoComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

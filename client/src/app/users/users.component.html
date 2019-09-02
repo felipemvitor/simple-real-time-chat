@@ -1,0 +1,8 @@
+<mat-list>
+  <h2 mat-subheader>Connected Users</h2>
+  <mat-list-item *ngFor="let user of users; let i = index">
+    <mat-icon mat-list-icon>person</mat-icon>
+    <h4 mat-line>{{user.name}}</h4>
+    <mat-divider *ngIf="i < users.length-1"></mat-divider>
+  </mat-list-item>
+</mat-list>
