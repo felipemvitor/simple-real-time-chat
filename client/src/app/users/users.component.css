@@ -1,31 +1,22 @@
-mat-list{
-  min-width:200px;
-  width:30%;
-  height: 100%;
-  position: fixed;
-  background: #21252b;
-  margin: 0px;
-  padding: 16px;
+h2{
+  color: white !important;
+  font-size: 218x !important;
 }
-
 mat-list-item:hover{
-  background: #282C34;
+  background: #3d3c3c;
   cursor:pointer;
 }
 
-h2 {
-  color: white !important;
-  font-size: 24px !important;
+mat-icon{
+  background: whitesmoke;
 }
 
 h4{
-  color:white;
-}
-
-mat-icon{
-  background: white;
+  color: white !important;
 }
 
 mat-divider{
-  background:rgb(60, 60, 60);
+  background: rgb(76, 76, 76);
 }
+
+

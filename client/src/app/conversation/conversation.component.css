@@ -1,0 +1,44 @@
+#title{
+  height: 56px;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px #272626 solid;
+}
+
+#conversation{
+  height: calc(100% - 114px);
+  margin: 0px;
+}
+
+#message{
+  height: 56px;
+  margin: px;
+  border-top: 1px #272626 solid;
+  background: rgb(220, 220, 220);
+  display: flex;
+}
+
+h2{
+  margin: 0px;
+  line-height: 56px;
+  padding-left: 16px;
+}
+
+input{
+  width: 100%;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px #272626 solid;
+}
+
+button{
+  background-color: #00969E !important;
+  margin: 8px;
+  float: right;
+  vertical-align: middle;
+}
+
+button:hover{
+  background-color: #006870!important;
+}
