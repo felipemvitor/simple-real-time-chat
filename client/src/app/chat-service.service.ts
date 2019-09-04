@@ -23,7 +23,15 @@ export class ChatService {
 
     onLoginComplete(): Observable<User> {
         return new Observable<User>((observer) => {
-            this.socket.on('login', (user: User) => {
+            this.socket.on('login', (users: any) => {
+                observer.next(users)
+            })
+        })
+    }
+
+    onNewUserConnected(): Observable<User> {
+        return new Observable<User>((observer) => {
+            this.socket.on('new-user', (user: User) => {
                 observer.next(user)
             })
         })

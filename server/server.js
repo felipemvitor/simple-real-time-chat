@@ -15,8 +15,8 @@ webSocket.sockets.on('connection', (socket) => {
     socket.on('login', (user) => {
         console.log('User logged: ' + user.name)
         users.push(user)
-        socket.emit('login', users)
-        socket.broadcast.emit('login', users)
+        socket.emit('login', users.filter((newUser) => { return newUser.name != user.name }))
+        socket.broadcast.emit('new-user', user)
     })
 
 })
