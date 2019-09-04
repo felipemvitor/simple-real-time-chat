@@ -8,12 +8,15 @@ var server = http.createServer((req, res) => {
 }).listen(PORT)
 
 var webSocket = socketIo.listen(server)
+var users = []
 
 webSocket.sockets.on('connection', (socket) => {
 
     socket.on('login', (user) => {
         console.log('User logged: ' + user.name)
-        socket.emit('login', user)
+        users.push(user)
+        socket.emit('login', users)
+        socket.broadcast.emit('login', users)
     })
 
 })

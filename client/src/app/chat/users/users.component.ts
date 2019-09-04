@@ -15,9 +15,9 @@ export class UsersComponent implements OnInit {
 
     ngOnInit() {
         console.log('Listening to server')
-        this.chatService.onLoginComplete().subscribe(user => {
-            console.log('User Logged')
-            this.users.push(user)
+        this.chatService.onLoginComplete().subscribe(users => {
+            console.log('New user')
+            this.users = users
         })
     }
 
