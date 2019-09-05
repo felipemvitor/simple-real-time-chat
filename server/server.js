@@ -19,4 +19,8 @@ webSocket.sockets.on('connection', (socket) => {
         socket.broadcast.emit('new-user', user)
     })
 
+    socket.on('message', (message) => {
+        console.log(`Message: ${message}`)
+    })
+
 })

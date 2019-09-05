@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import * as socketIo from 'socket.io-client'
 import { User } from './user.model';
 import { Observable } from 'rxjs';
+import { Message } from './message.model';
+import { MessageType } from './chat/message-type.model';
 
 const SERVER_URL = 'http://localhost:3000'
 
@@ -19,6 +21,14 @@ export class ChatService {
 
     login(user: User) {
         this.socket.emit('login', user)
+    }
+
+    sendMessage(message: Message) {
+        this.socket.emit('message', JSON.stringify({
+            user: message.user,
+            type: MessageType.TEXT,
+            msg: message.msg
+        }))
     }
 
     onLoginComplete(): Observable<User> {
