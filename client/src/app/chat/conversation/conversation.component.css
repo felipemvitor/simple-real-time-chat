@@ -42,3 +42,7 @@ button{
 button:hover{
   background-color: #006870!important;
 }
+
+app-message-info{
+    width: 100%;
+}

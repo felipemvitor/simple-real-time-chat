@@ -5,7 +5,21 @@
     </mat-list-item>
 </mat-list>
 <div id="conversation">
-    <mat-list></mat-list>
+    <mat-list>
+        <mat-list-item *ngFor="let message of messages; let i = index;">
+            <app-message-info *ngIf="message.type == messageType.NEW_USER" [info]="message.msg"></app-message-info>
+        </mat-list-item>
+    </mat-list>
+
+    <!-- <mat-list>
+            <h2 mat-subheader>Connected Users</h2>
+            <mat-list-item *ngFor="let user of users; let i = index">
+                <mat-icon mat-list-icon>person</mat-icon>
+                <h4 mat-line>{{user.name}}</h4>
+                <mat-divider *ngIf="i < users.length-1"></mat-divider>
+            </mat-list-item>
+        </mat-list>
+ -->
 </div>
 <div id="message">
     <input type="text">

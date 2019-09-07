@@ -11,13 +11,14 @@ import { MessageType } from '../message-type.model';
 export class ConversationComponent implements OnInit {
 
     messages = []
+    messageType = MessageType
 
     constructor(public chatService: ChatService) { }
 
     ngOnInit() {
         this.chatService.onNewUserConnected().subscribe(user => {
             console.log(`User: ${user.name}`)
-            this.chatService.sendMessage(new Message(user, MessageType.TEXT, "text"))
+            this.messages.push(new Message(user, MessageType.NEW_USER, `${user.name} joined the group.`))
         })
     }
 
