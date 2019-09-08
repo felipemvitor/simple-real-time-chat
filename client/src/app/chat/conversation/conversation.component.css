@@ -24,6 +24,10 @@ h2{
   padding-left: 16px;
 }
 
+app-message-info, app-message-left, app-message-right{
+  margin: 8px 0;
+}
+
 input{
   width: 100%;
   margin: 8px;
@@ -43,6 +47,21 @@ button:hover{
   background-color: #006870!important;
 }
 
-app-message-info{
+app-message-info, app-message-right{
     width: 100%;
+}
+
+.message-info{
+  margin: 8px 0px;
+}
+
+.message-sent {
+  width: 100%;
+  float: right !important;
+  margin: 8px 0px;
+}
+
+.message-received{
+  float: left;
+  margin: 8px 0px;
 }

@@ -1,7 +1,7 @@
 #message-box{
   width: 50%;
   margin: auto;
-  background: #21252b;
+  background: rgba(33, 37, 43, 0.8);
   padding: 8px 16px;
   border-radius: 8px;
   overflow:auto;

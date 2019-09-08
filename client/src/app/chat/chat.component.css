@@ -11,6 +11,20 @@ app-users{
     margin: 0px;
     background-color: #272626;
     padding: 4px 16px;
+    overflow: auto;
+}
+
+app-user ::ng-deep ::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+app-user ::ng-deep ::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.26) !important;
+}
+
+app-user ::ng-deep ::-webkit-scrollbar-thumb {
+    background: blue;
 }
 
 app-conversation{

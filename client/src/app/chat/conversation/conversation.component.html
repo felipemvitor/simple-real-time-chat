@@ -6,9 +6,15 @@
 </mat-list>
 <div id="conversation">
     <mat-list>
-        <mat-list-item *ngFor="let message of messages; let i = index;">
-            <app-message-info *ngIf="message.type == messageType.NEW_USER" [info]="message.msg"></app-message-info>
-        </mat-list-item>
+      <div *ngFor="let message of messages; let i = index;">
+          <mat-list-item [ngSwitch]="message.type" [ngClass]="getClass(message.type)">
+              <app-message-info *ngSwitchCase="messageType.NEW_USER" [info]="message.msg"></app-message-info>
+
+              <app-message-left *ngSwitchCase="messageType.RECEIVED" [sender]="message.user.name" [message]="message.msg"></app-message-left>
+
+              <app-message-right *ngSwitchCase="messageType.SENT" [sender]="message.user.name" [message]="message.msg"></app-message-right>
+          </mat-list-item>
+      </div>
     </mat-list>
 
     <!-- <mat-list>
@@ -22,8 +28,8 @@
  -->
 </div>
 <div id="message">
-    <input type="text">
-    <button mat-mini-fab style="">
+    <input type="text" [(ngModel)]="message" placeholder="Type your message here.">
+    <button mat-mini-fab (click)="sendMessage()">
         <mat-icon style="color: white;">send</mat-icon>
     </button>
 </div>

@@ -20,7 +20,7 @@ export class ChatService {
 	}
 
 	login(user: User) {
-		this.socket.emit('login', user)
+    this.socket.emit('login', user)
 	}
 
 	sendMessage(message: Message) {

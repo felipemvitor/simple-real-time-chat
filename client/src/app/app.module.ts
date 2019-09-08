@@ -20,6 +20,7 @@ import {
     MatButtonModule,
     MatDialogModule
 } from '@angular/material';
+import { Globals } from './globals';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,7 @@ import {
         MatButtonModule,
         MatDialogModule
     ],
-    providers: [],
+    providers: [Globals],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

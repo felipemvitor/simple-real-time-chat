@@ -2,6 +2,10 @@ h2{
   color: white !important;
   font-size: 218x !important;
 }
+mat-list{
+  overflow: auto;
+}
+
 mat-list-item:hover{
   background: #3d3c3c;
   cursor:pointer;

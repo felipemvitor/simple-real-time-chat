@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-message-right',
@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageRightComponent implements OnInit {
 
-  sender:string = "Sender"
-  message:string = "Message"
+  @Input() sender: string = ""
+  @Input() message: string = ""
 
   constructor() { }
 
