@@ -37,15 +37,17 @@ export class ConversationComponent implements OnInit {
   }
 
   sendMessage() {
-    console.log("Message: " + this.message)
-    this.chatService.sendMessage(
-      new Message(
-        this.globals.user,
-        null,
-        this.message
+    if(this.message !== ''){
+      console.log("Message: " + this.message)
+      this.chatService.sendMessage(
+        new Message(
+          this.globals.user,
+          null,
+          this.message
+        )
       )
-    )
-    this.message = ''
+      this.message = ''
+    }
   }
 
   getClass(type){
