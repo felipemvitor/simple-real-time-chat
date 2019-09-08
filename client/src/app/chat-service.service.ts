@@ -9,41 +9,56 @@ import { MessageType } from './chat/message-type.model';
 const SERVER_URL = 'http://localhost:3000'
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class ChatService {
 
-    private socket: SocketIOClient.Socket
+	private socket: SocketIOClient.Socket
 
-    constructor() {
-        this.socket = socketIo(SERVER_URL)
-    }
+	constructor() {
+		this.socket = socketIo(SERVER_URL)
+	}
 
-    login(user: User) {
-        this.socket.emit('login', user)
-    }
+	login(user: User) {
+		this.socket.emit('login', user)
+	}
 
-    sendMessage(message: Message) {
-        this.socket.emit('message', JSON.stringify({
-            user: message.user,
-            type: MessageType.TEXT,
-            msg: message.msg
-        }))
-    }
+	sendMessage(message: Message) {
+		this.socket.emit('message', JSON.stringify({
+			user: message.user,
+			msg: message.msg
+		}))
+	}
 
-    onLoginComplete(): Observable<User> {
-        return new Observable<User>((observer) => {
-            this.socket.on('login', (users: any) => {
-                observer.next(users)
-            })
-        })
-    }
+	onLoginComplete(): Observable<User> {
+		return new Observable<User>((observer) => {
+			this.socket.on('login', (users: any) => {
+				observer.next(users)
+			})
+		})
+	}
 
-    onNewUserConnected(): Observable<User> {
-        return new Observable<User>((observer) => {
-            this.socket.on('new-user', (user: User) => {
-                observer.next(user)
-            })
-        })
-    }
+	onNewUserConnected(): Observable<User> {
+		return new Observable<User>((observer) => {
+			this.socket.on('new-user', (user: User) => {
+				observer.next(user)
+			})
+		})
+	}
+
+	onMessageSent(): Observable<Message> {
+		return new Observable<Message>((observer) => {
+			this.socket.on('message-sent', (message => {
+				observer.next(message)
+			}))
+		})
+	}
+
+	onMessageReceived(): Observable<Message> {
+		return new Observable<Message>((observer) => {
+			this.socket.on('message-received', (message) => {
+				observer.next(message)
+			})
+		})
+	}
 }

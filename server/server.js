@@ -20,7 +20,9 @@ webSocket.sockets.on('connection', (socket) => {
     })
 
     socket.on('message', (message) => {
-        console.log(`Message: ${message}`)
+		console.log(`Message: ${message}`)
+		socket.emit('message-sent', message)
+		socket.broadcast.emit('message-received')
     })
 
 })
